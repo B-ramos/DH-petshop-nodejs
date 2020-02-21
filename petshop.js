@@ -18,11 +18,11 @@ let pets = [
         servicos: ["Banho", "Tosa"]
     },
     {
-        nome: "Gamora",
+        nome: "Groot",
         tipo: "cachorro",
         raca: "labrador",
         idade: [2, "meses"],
-        genero: "F",
+        genero: "M",
         vacinado: false,
         servicos: ["tosa"]
     },
@@ -38,6 +38,7 @@ let pets = [
 ];
 
 const listarPets = () => {
+
     let conteudo = "";
     for (let pet of pets) {
         conteudo += `
@@ -48,8 +49,7 @@ const listarPets = () => {
         ${pet.genero === "M" ? "Genero: Macho" : "Genero: Femea"}
         ${pet.vacinado == true ? "Está vacinado" : "Não está vacinado"}
         Serviços realizados: ${pet.servicos}
-        ____________________________________
-        `
+        ____________________________________        `
     }
     return conteudo;
 };
@@ -81,6 +81,7 @@ const adicionarPet = novoPet => {
 };
 
 const buscarPet = nomePet => {
+
     let petEncontrado = pets.filter(pet => {
         return pet.nome == nomePet
     })
@@ -88,6 +89,7 @@ const buscarPet = nomePet => {
 }
 
 const vacinarPet = nomePet => {
+    
     for (pet of pets) {
         if (pet.nome === nomePet) {
             if (!pet.vacinado) {
